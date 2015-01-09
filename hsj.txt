@@ -13,3 +13,5 @@ git push origin v1.0.1
 只需要创建一次
 git config --global user.name "hsj"
 git config --global user.email "18231218@qq.com"
+需要打开Git Bash
+ssh-keygen -t rsa

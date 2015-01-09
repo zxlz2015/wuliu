@@ -6,8 +6,9 @@ git add templates
 git commit -m "add templates at 201501091700"
 git tag v1.0.1
 git tag
-git push origin hsj
+git push https hsj
 git push origin v1.0.1
+get remote -v(查询路径地址有哪些)
 
 
 只需要创建一次
@@ -18,3 +19,7 @@ ssh-keygen -t rsa
 克隆项目
 git clone git@github.com:zxlz2015/wuliu.git
 git clone git://github.com/zxlz2015/wuliu.git
+
+
+git config --global push.default matching
+git config --global push.default simple

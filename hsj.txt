@@ -8,3 +8,8 @@ git tag v1.0.1
 git tag
 git push origin hsj
 git push origin v1.0.1
+
+
+只需要创建一次
+git config --global user.name "hsj"
+git config --global user.email "18231218@qq.com"

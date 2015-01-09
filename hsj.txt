@@ -1,0 +1,10 @@
+clone git@github.com:zxlz2015/wuliu.git
+git branch
+git checkout -b dev origin/hsj
+git branch
+git add templates
+git commit -m "add templates at 201501091700"
+git tag v1.0.1
+git tag
+git push origin hsj
+git push origin v1.0.1

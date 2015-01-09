@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+<script type="text/javascript" src="/static/js/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="/static/js/jquery-moblie.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>
+</head>
+<body>
+	<div id="all">
+		<div class="login">
+			<div class="title"><h3>登 陆</h3><span>没有账号 <a>免费注册</a></span></div>
+			<div class="username">
+				<input type="text" placeholder="username" name="login_name" id="login_name">
+				<img alt="" src="{{ STATIC_URL }}img/username.png">
+                <div class="tips"><span></span></div>
+			</div>
+			<div class="password">
+				<input type="password" placeholder="password" name="login_password" id="login_password">
+				<img alt="" src="{{ STATIC_URL }}img/key.png">
+                <div class="tips"><span></span></div>
+			</div>
+			<div class="checked">
+				<input type="text">
+				<img alt="" src="{{ STATIC_URL }}img/check.png">
+				<button class="btn_a">登 陆</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

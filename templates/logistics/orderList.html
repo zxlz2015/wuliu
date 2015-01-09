@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+<script type="text/javascript" src="/static/js/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="/static/js/jquery-moblie.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>
+</head>
+<body>
+<div id="personal">
+		<div><a>首页</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的日记</a></div>
+        <div><a>我的消息</a></div>
+    </div>
+	<div id="all">
+		<div id="header"><img src="{{ STATIC_URL }}img/list-icon.png" class="personal_menu"/><h2>生成订单时间</h2><h2 id="order_time"></h2></div>
+		<div id="main">
+			<div class="order_list">
+                <div class="log_room"><a>日志记录</a></div>
+				<table>
+					<tr><td>车牌号</td><td><span id="car_num" name="car_num">桂B88661</span></td></tr>
+					<tr><td>距离</td><td><span>3000米</span></td></tr>
+					<tr><td>联系人</td><td><a class="name"><span id="name" name="name">黄某某</span></a></td></tr>
+					<tr class="hide"><td>车辆识别号</td><td><span id="car_know_num" name="car_know_num">NDDDDDKJKJKMNDKFNDK</span></td></tr>
+					<tr class="hide"><td>发动机号码</td><td><span id="car_engine_num" name="car_engine_num">787827876</span></td></tr>
+					<tr class="hide"><td>核定载质量</td><td><span id="car_kg" name="car_kg">3000米</span></td></tr>
+					<tr class="hide"><td>联系人驾照扫描件</td><td><img src="/static/img/car.jpg" id="contact_img" name="contact_img"/></td></tr>
+					<tr class="hide"><td>车牌号扫描件</td><td><img src="/static/img/car.jpg" id="car_img" name="car_img"/></td></tr>
+					<tr class="hide"><td>行驶证扫描件</td><td><img src="/static/img/car.jpg" id="car_driving_license_img" name="car_driving_license_img"/></td></tr>
+				</table>
+				<div class="tool hide"><button class="closeup right">收起</button><button class="right">确认</button></div>
+			</div>
+		</div>
+        	<div id="footer"><a class="message"><div class="round">2</div><img src="{{ STATIC_URL }}img/messages.png"><span>消息</span></a><a><img src="{{ STATIC_URL }}img/log.png"><span>日志</span></a><a><img src="{{ STATIC_URL }}img/maps.png"><span>地图</span></a><a><img src="{{ STATIC_URL }}img/list.png"><span>列表</span></a></div>
+        </div>
+<script type="text/javascript">
+$(function(){
+	timedCount();
+})
+</script>
+</body>
+</html>

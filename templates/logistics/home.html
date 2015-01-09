@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+<link href="/static/js/mobiscroll/css/mobiscroll.custom-2.5.0.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="/static/js/jquery-moblie.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>
+<script type="text/javascript" src="/static/js/mobiscroll/js/mobiscroll.custom-2.5.0.min.js"></script>
+</head>
+<body>
+	<div id="personal">
+		<div><a>首页</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的日记</a></div>
+        <div><a>我的消息</a></div>
+    </div>
+	<div id="all">
+		<div id="header"><img src="{{ STATIC_URL }}img/list-icon.png" class="personal_menu"/></div>
+        <div id="main">
+			<div class="order_list">
+				<table>
+                    <tr class="error_prompt"><td colspan="2"></td></tr>
+					<tr><td>产品名称</td><td><input  id="product_name" name="product_name"></td></tr>
+                    <tr><td>产品重量</td><td><input  id="product_weight" name="product_weight"></td></tr>
+					<tr><td>运费</td><td><input  id="freight" name="freight"></td></tr>
+					<tr><td>要求车到厂时间</td><td><input type="text" data-role="datebox"  id="logistics_to_accessories_at" name="logistics_to_accessories_at"/></td></tr>
+					<tr><td>装货预估时间</td><td><input type="text" id="loading_time" name="loading_time"/></td></tr>
+					<tr><td>要求到达目的地时间</td><td><input type="text" data-role="datebox"  id="logistics_to_destination_at" name="logistics_to_destination_at"/></td></tr>
+					<tr><td>目的地地址</td><td colspan="3"><input  id="destination_access" name="destination_access"></td></tr>
+					<tr><td>目的地联系人</td><td><input  id="destination_contact" name="destination_contact"></td></tr>
+					<tr><td>目的地联系人手机号</td><td><input  id="destination_phone" name="destination_phone"></td></tr>
+					<tr><td>备注</td><td colspan="3"><textarea  id="description" name="description"></textarea></td></tr>
+				</table>
+			<div class="tool"><input type="submit" class="btn right"></div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+$(function(){
+	  var newjavascript={
+     plugdatetime:function ($dateTxt,type) {
+
+//           var curr = new Date().getFullYear();
+           var opt = {}
+	   opt.time = {preset : type};
+           opt.date = {preset : type};
+           opt.datetime = {
+		preset : type,
+		minDate: new Date(2010,1,01,00,00),
+		maxDate: new Date(2020,12,31,24,59),
+		stepMinute: 1
+	   };
+             $dateTxt.val('').scroller('destroy').scroller(
+				$.extend(opt[type],
+					{
+						theme: "sense-ui",
+						mode: "scroller",
+						display: "modal",
+						lang: "english",
+						monthText: "月",
+						dayText: "日",
+						yearText: "年",
+						hourText: "时",
+						minuteText: "分",
+						ampmText:"上午/下午",
+						setText: '确定',
+						cancelText: '取消',
+						dateFormat: 'yy-mm-dd'
+					}
+				)
+			);
+        }
+}
+
+	var date = new Date();
+   	date.setMinutes(date.getMinutes()+30);
+
+   	var inputDate=$('input:jqmData(role="datebox")');
+ 	inputDate.mobiscroll().datetime();
+ 	inputDate.mobiscroll("setDate",date,true);
+
+})
+</script>
+</body>
+</html>

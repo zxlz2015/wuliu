@@ -1,0 +1,426 @@
+/*基本初始化*/
+html{
+	height: 100%;
+	width: 100%;
+}
+body{
+	font-family:"Microsoft YaHei";
+	color: #333333;
+	font-size: 14px;
+	width:100%;height:100%;padding:0;margin:0;
+	overflow-x: hidden;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+}
+img{
+	border: none 0;
+}
+object{
+	outline: none;
+}
+hr{
+	color: #bbbbbb;
+	background: #bbbbbb;
+	border: none;
+	height: 1px;
+}
+ul{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	cursor: default;
+	color: #000;
+}
+a:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+input{
+	font-family:"Microsoft YaHei";
+	border-color: #999 #DDD #DDD #999;
+	box-shadow: 1px 1px 1px #DDD inset;
+	border-width: 1px;
+	border-style: solid;
+	text-indent: 1em;
+	border-radius:3px;
+}
+input[readonly]{
+background-color:#EEEEEE;
+}
+select{
+	height: 25px;
+}
+select[disabled]{
+	background: #eeeeee;
+	border-color: #ededef;
+}
+button,.btn{
+	border: none;
+	font-family:"Microsoft YaHei";
+	padding: 0;
+	margin: 0;
+	padding: 0.4rem 1.6rem;
+	border-radius:3px;
+	background: #f7980a;
+	color: #fff;
+}
+textarea{
+	border: 1px solid #cccccc;
+}
+.right{
+	float:right;
+}
+.hide{
+	display: none;
+}
+/*登陆界面*/
+.login{
+	width: 100%;
+	overflow: auto;
+	border-radius:5px;
+	background: #fff;
+}
+.register{
+	width: 100%;
+	overflow: auto;
+	border-radius:5px;
+	background: #fff;
+}
+.title{
+	width: 100%;
+	height: 50px;
+	background: #f8f8f8;
+	line-height: 50px;
+}
+.title h3{
+	display: inline;
+	margin: 0 20px 0 30px;
+	font-weight: normal;
+}
+.title span{
+	font-weight: normal;
+	font-size: 12px;
+	color: #666666;
+}
+.title span a{
+	color: #666666;
+}
+.checked img{
+	width: 26%;
+	height: 32px;
+	position: absolute;
+	left: 36%;
+}
+.register_div button{
+	float: right;
+}
+.title_a{
+	display: none;
+}
+.title_b{
+	display: none;
+}
+.register_div{
+	width: 90%;
+	margin: 30px 5%;
+	position: relative;
+	height: 32px;
+}
+.register_div span{
+	width: 20%;
+	font-size: 14px;
+	display: inline-block;
+}
+.username,.password,.checked{
+	width: 78%;
+	text-align: center;
+	height: 32px;
+	margin:30px auto;
+	position: relative;
+}
+.username input,.password input{
+	width: 100%;
+	height: 32px;
+	padding-left: 2%;
+}
+.username img,.password img,.register_div img{
+	width: 16px;
+	height: 18px;
+	position: absolute;
+	bottom: 5px;
+}
+.checked .btn_a{
+	position: absolute;
+	right: 0;
+}
+#all .tips span{
+	position: absolute;
+	color: red;
+	left: 80px;
+	font-size: 11px;
+	width: auto;
+}
+.register_div input{
+	width: 75%;
+	height: 32px;
+	padding-left: 2%;
+}
+.checked input{
+	height: 28px;
+	width: 30%;
+	left: 0;
+	position: absolute;
+}
+.username img,.password img,.register_div img{
+	right: 6%;
+}
+/*end*/
+/*header*/
+#header{
+	height:48px;
+	width: 100%;
+	background: #f7980a;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99999;
+}
+#header h2{
+	display: inline-block;
+	line-height: 48px;
+	color: #fff;
+	margin-left: 2rem;
+	font-weight: normal;
+}
+#header a{
+	display: block;
+	width: 100%;
+}
+.personal_menu{
+	float: left;
+	margin-left: 2%;
+	width: 30px;
+}
+/*footer*/
+#footer{
+	height:48px;
+	width: 100%;
+	background: #f1f1f1;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	box-shadow: 2px 2px 2px 2px #999999;
+}
+#footer a{
+	display: block;
+	width: 25%;
+	text-align: center;
+	float: left;
+	margin: 0;
+	height: 100%;
+	text-decoration: none;
+	position: relative;
+}
+.message {
+	position: relative;
+}
+.message .round{
+	width: 20px;
+	height:20px;
+	background: #f7980a;
+	border-radius:10px;
+	display: block;
+	left:15%;
+	color: #fff;
+	top:5px;
+	line-height: 20px;
+	position: absolute;
+}
+#footer span{
+	font-size: 12px;
+	color: #999999;
+	display: block;
+}
+#footer img{
+	width: 25px;
+	margin-top: 5px;
+}
+/*all*/
+#all{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+#main{
+	width: 96%;
+	padding:60px 2% 50px 2%;
+}
+.publish{
+	padding-bottom: 0.2rem;
+}
+.publish span{
+	margin-left: 1rem;
+}
+.order_list table{
+	width: 100%;
+}
+.order_list input{
+	width: 100%;
+}
+.order_list td:nth-child(1){
+	width: 50%;
+}
+.order_list td:nth-child(2){
+	width: 50%;
+}
+.order_list td{
+	padding-bottom: 0.2rem;
+	vertical-align: top;
+}
+#car_know_num{
+	display: block;
+	max-width:150px;
+	overflow: hidden;
+}
+.order_list textarea{
+	width: 100%;
+	height: 50px;
+}
+.order_list img{
+	width: 90%;
+}
+.tool{
+	width: 100%;
+	overflow: auto;
+	padding: 1rem 0 1rem 0;
+}
+.tool input[type="submit"]{
+	width: auto;
+	text-indent: 0;
+	height: auto;
+}
+.tool .closeup{
+	margin-left: 1rem;
+}
+.name{
+	text-decoration: underline;
+	color: #f7980a;
+}
+.map{
+	height: 100%;
+	width: 100%;
+}
+.face{
+	width: 2rem;height: 2rem;
+}
+.others,.myself{
+	overflow: auto;
+	padding: 1rem 0 1rem 0;
+	position: relative;
+}
+.others .face,.myself .face{
+	vertical-align: middle;
+	padding: 0.5rem;
+}
+.others .face{
+	float: left;
+}
+.dialog{
+		padding: 1rem;
+		max-width: 60%;
+		border-radius:1rem;
+		margin-top: 0.2rem;
+}
+.others .dialog{
+	float: left;
+	background-image: -moz-linear-gradient(top, #efefef, #d2ccce); /* Firefox */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #efefef), color-stop(1, #d2ccce)); /* Saf4+, Chrome */
+}
+.myself .dialog{
+	float: right;
+	background-image: -moz-linear-gradient(top, #F4CD95, #f7980a); /* Firefox */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F4CD95), color-stop(1, #f7980a)); /* Saf4+, Chrome */
+}
+.myself .face{
+	float: right;
+}
+#send_at{
+	font-size: 11px;
+	position: absolute;
+	top:0;
+	color: #999999;
+}
+.others #send_at{
+	left: 3rem;
+}
+.myself #send_at{
+	right: 3rem;
+}
+.inflow{
+	margin-top: 1rem;
+}
+.inflow textarea{
+	width: 68%;
+}
+.inflow .btn{
+	height: 36px;
+}
+.error{
+	text-align: center;
+	font-size: 24px;
+	color: #f7980a;
+}
+.error.time{
+	font-size: 60px;
+	color: red;
+}
+.log_room a{
+	color: red;
+	text-decoration: underline;
+	font-size: 16px;
+	position: absolute;
+	right: 4%;
+	top: 60px;
+}
+.error_prompt{
+	display: none;
+ }
+.error_prompt td{
+	background: #ff8080;
+	color: #fff;
+	text-align: center;
+	border: 2px solid #ffdddd;
+}
+/**personal**/
+#personal{
+	width: 60%;
+	box-shadow:-2px 2px 10px 2px #999999;
+	position: absolute;
+	left: -60%;
+	top: 0;
+	bottom: 0;
+	background: #eeeeee;
+	z-index: 999999;
+}
+#personal a{
+	display: block;
+	padding: 8px;
+}
+#personal>div{
+	background: #fff;
+	border-top: 1px solid #cccccc;
+}
+/**/
+/**补丁程序**/
+.ui-btn-text{
+	display: none;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+<script type="text/javascript" src="/static/js/jquery-1.9.0.js"></script>
+</head>
+<body>
+	<div id="all">
+		<div class="register">
+			<div class="title"><h3>欢迎注册</h3><span>已有账号 <a href="../login">马上登陆</a></span></div>
+			<div class="register_div">
+				<span>用户名</span>
+				<input type="text" placeholder="6-16字符" name="login_name" id="login_name">
+				<img alt="" src="{{ STATIC_URL }}img/username.png">
+				<div class="tips"><span></span></div>
+			</div>
+			<div class="register_div">
+				<span>电话号码</span>
+				<input type="text" placeholder="请输入11位手机号码" name="phone" id="phone">
+				<img alt="" src="{{ STATIC_URL }}img/phone.png">
+				<div class="tips"><span></span></div>
+			</div>
+			<div class="register_div">
+				<span>密码</span>
+				<input type="password" placeholder="6-16字符" name="login_password" id="login_password">
+				<img alt="" src="{{ STATIC_URL }}img/key.png">
+				<div class="tips"><span></span></div>
+			</div>
+			<div class="register_div">
+				<span>密码重复</span>
+				<input type="password" placeholder="密码确认" id="repassword">
+				<img alt="" src="{{ STATIC_URL }}img/key.png">
+				<div class="tips"><span></span></div>
+			</div>
+			<div  class="register_div">
+				<button class="btn_a">注 册</button>
+			</div>
+		</div>
+	</div>
+<script type="application/javascript">
+    $(function(){
+			//正则验证注册
+	$(".register_div input").keyup(function(){
+		var login_name=$("#login_name").val();
+        var password=$("#login_password").val();
+        var repassword=$("#repassword").val();
+        var phone=$("#phone").val();
+        var reg=/^[a-zA-Z0-9]{6,12}$/;
+		var regMobile=/^1[0-9]{10}$/;
+        if($(this).parent().index()==1){
+            if(reg.test(login_name)==false){
+                $(this).parent().find(".tips span").html("用户名长度在6-12之间!");
+            }else{
+                $(this).parent().find(".tips span").html("");
+            }
+        }
+        if($(this).parent().index()==2){
+            if(regMobile.test(phone)==false){
+                $(this).parent().find(".tips span").html("对不起您填写的手机格式不正确!")
+            }else{
+                $(this).parent().find(".tips span").html("");
+            }
+        }
+        if($(this).parent().index()==3){
+            if(reg.test(password)==false){
+                $(this).parent().find(".tips span").html("密码长度在6-12之间!")
+            }else{
+                 $(this).parent().find(".tips span").html("");
+            }
+        }
+        if($(this).parent().index()==4){
+           if(password!=repassword){
+                $(this).parent().find(".tips span").html("对不起您两次输入的密码不一致!")
+            }else{
+                 $(this).parent().find(".tips span").html("");
+            }
+        }
+	});
+    })
+</script>
+</body>
+</html>

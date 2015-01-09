@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+<script type="text/javascript" src="/static/js/jquery-1.9.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://map.qq.com/api/js?v=1"></script>
+<script type="text/javascript" src="/static/js/jquery-moblie.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>
+<style type="text/css">
+	#all{
+		height: 100%;
+	}
+	#main{
+		height: 100%;
+		padding: 0;
+		width: 100%;
+	}
+</style>
+</head>
+<body onload="getLocation()">
+<div id="personal">
+		<div><a>首页</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的日记</a></div>
+        <div><a>我的消息</a></div>
+    </div>
+<div id="all">
+    <div id="header"><img src="{{ STATIC_URL }}img/list-icon.png" class="personal_menu"/><a class="orderList"><h2>订单列表</h2></a></div>
+    <div id="main">
+        <div id="container" class="map"></div>
+    </div>
+     <div id="footer"><a class="message"><div class="round">2</div><img src="{{ STATIC_URL }}img/messages.png"><span>消息</span></a><a><img src="{{ STATIC_URL }}img/log.png"><span>日志</span></a><a><img src="{{ STATIC_URL }}img/maps.png"><span>地图</span></a><a><img src="{{ STATIC_URL }}img/list.png"><span>列表</span></a></div>
+	</div>
+    <script type="text/javascript">
+        function getLocation() {
+{#            if (navigator.geolocation) {#}
+{#                navigator.geolocation.watchPosition(locationSuccess, locationError,{#}
+{#                    // 指示浏览器获取高精度的位置，默认为false#}
+{#                    enableHighAcuracy: true,#}
+{#                    // 指定获取地理位置的超时时间，默认不限时，单位为毫秒#}
+{#                    timeout: 5000,#}
+{#                    // 最长有效期，在重复获取地理位置时，此参数指定多久再次获取位置。#}
+{#                    maximumAge: 5000#}
+{#                });#}
+{#            }else{#}
+{#                init({{ x }}, {{ y }})#}
+{#            }#}
+            init({{ x }}, {{ y }})
+        }
+        function locationSuccess(position) {
+            init(position.coords.latitude, position.coords.longitude)
+        }
+        function locationError(error){
+{#            switch(error.code) {#}
+{#                case error.TIMEOUT:#}
+{#                    alert("A timeout occured! Please try again!");#}
+{#                    break;#}
+{#                case error.POSITION_UNAVAILABLE:#}
+{#                    alert('We can\'t detect your location. Sorry!');#}
+{#                    break;#}
+{#                case error.PERMISSION_DENIED:#}
+{#                    alert('Please allow geolocation access for this to work.');#}
+{#                    break;#}
+{#                case error.UNKNOWN_ERROR:#}
+{#                    alert('An unknown error occured!');#}
+{#                    break;#}
+{#            }#}
+        }
+        var init = function (x, y) {
+            //alert(x + ";" + y);
+            var center = new soso.maps.LatLng(x, y);
+            var img = '{{ STATIC_URL }}img/markerIcon.jpg';
+
+            var map = new soso.maps.Map(
+                document.getElementById('container'),
+                {
+                    center: center,
+                    zoomLevel: 13
+                }
+            );
+            var marker = new soso.maps.Marker({
+                position: center,
+                map: map
+            });
+            var markerIcon = new soso.maps.MarkerImage(
+                    img,
+                    new soso.maps.Size(16, 19)
+            );
+            marker.setIcon(markerIcon);
+
+            var center2 = new soso.maps.LatLng(x + 0.000111, y + 0.000111);
+            var marker2 = new soso.maps.Marker({
+                position: center2,
+                map: map
+            });
+            marker2.setIcon(markerIcon);
+        }
+    </script>
+</body>
+</html>

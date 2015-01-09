@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+<script type="text/javascript" src="/static/js/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="/static/js/jquery-moblie.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>
+</head>
+<body onload='getLocation()'>
+    <p id="demo">获得您的坐标：</p>
+    <script>
+    var x=document.getElementById("demo");
+    function getLocation()
+      {
+      if (navigator.geolocation)
+        {
+        navigator.geolocation.getCurrentPosition(showPosition);
+        }
+      else{x.innerHTML="Geolocation is not supported by this browser.";}
+      }
+    function showPosition(position)
+      {
+      x.innerHTML="Latitude: " + position.coords.latitude + 
+      "<br />Longitude: " + position.coords.longitude;	
+      }
+    </script>
+	<div id="personal">
+		<div><a>首页</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的订单</a></div>
+        <div><a>我的日记</a></div>
+        <div><a>我的消息</a></div>
+    </div>
+	<div id="all">
+		<div id="header"><img src="{{ STATIC_URL }}img/list-icon.png" class="personal_menu"/></div>
+		<div id="main">
+			<div class="publish">发布信息时间:<span id="create_at" name="create_at">xxxxxx</span></div>
+			<div class="publish">开始时间：<span id="start_at" name="start_at">xxxxxxxx</span></div>
+			<div class="publish">完成时间：<span id="finish_at" name="finish_at">xxxxxxxxx</span></div>
+			<div class="order_list">
+				<table>
+					<tr><td>产品名称</td><td>XXXX</td></tr>
+					<tr><td>产品重量</td><td>XXXX</td></tr>
+					<tr><td>运费</td><td>XXXXX</td></tr>
+					<tr><td>要求车到厂时间</td><td id="logistics_to_accessories_at" name="logistics_to_accessories_at">XXXXXX</td></tr>
+					<tr><td>装货预估时间</td><td id="loading_time" name="loading_time">XXXX</td></tr>
+					<tr><td>要求到达目的地时间</td><td id="logistics_to_destination_at" name="logistics_to_destination_at">XXXXX</td></tr>
+					<tr><td>目的地地址</td><td colspan="3" id="destination_access" name="destination_access">XXXXX</td></tr>
+					<tr><td>目的地联系人</td><td id="destination_contact" name="destination_contact">XXXX</td></tr>
+					<tr><td>目的地联系人手机号</td><td id="destination_phone" name="destination_phone">XXXXXXXXXX</td></tr>
+					<tr><td>备注</td><td colspan="3"><textarea id="description" name="description">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</textarea></td></tr>
+				</table>
+			</div>
+		</div>
+        	<div id="footer"><a class="message"><div class="round">2</div><img src="{{ STATIC_URL }}img/messages.png"><span>消息</span></a><a><img src="{{ STATIC_URL }}img/log.png"><span>日志</span></a><a><img src="{{ STATIC_URL }}img/maps.png"><span>地图</span></a><a><img src="{{ STATIC_URL }}img/list.png"><span>列表</span></a></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+name: zxlz
+version: 5
+
+
+libraries:
+ - name: django
+   version: "1.7.1"

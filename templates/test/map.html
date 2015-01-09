@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>Map</title>
+    <script charset="utf-8" src="http://map.qq.com/api/js?v=1"></script>
+    <script>
+        var init = function () {
+            var map = new soso.maps.Map(document.getElementById('container'));
+            var myLatLng = new soso.maps.LatLng(39.916527, 116.397128);
+            map.moveTo(myLatLng);
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="container" style="width:500px; height:300px"></div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 
 git branch
-git checkout -b dev origin/hsj
+git checkout -b hsj origin/hsj
 git branch
 git add templates
 git commit -m "add templates at 201501091700"

@@ -1,0 +1,20 @@
+
+git branch
+git checkout -b hsj origin/hsj
+git branch
+git add templates
+git commit -m "add templates at 201501091700"
+git tag v1.0.1
+git tag
+git push origin hsj
+git push origin v1.0.1
+
+
+只需要创建一次
+git config --global user.name "hsj"
+git config --global user.email "18231218@qq.com"
+需要打开Git Bash
+ssh-keygen -t rsa
+克隆项目
+git clone git@github.com:zxlz2015/wuliu.git
+git clone git://github.com/zxlz2015/wuliu.git
